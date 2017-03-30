@@ -4,7 +4,9 @@
   "description": "The libruary helps you providing easy data sharing between components by using a principle of angular singleton services",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "webpack",
+    "build": "rimraf bundle && webpack --config config/webpack.prod.js --progress --profile --bail"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,13 @@
   "bugs": {
     "url": "https://github.com/Olegdzhan/react-singleton-state/issues"
   },
-  "homepage": "https://github.com/Olegdzhan/react-singleton-state#readme"
+  "homepage": "https://github.com/Olegdzhan/react-singleton-state#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2017": "^6.22.0",
+    "webpack": "^2.3.2",
+    "webpack-merge": "^4.1.0"
+  }
 }
