@@ -27,7 +27,8 @@ module.exports = merge(common, {
             test: /\.js$/,
             loader: 'babel-loader',
             query: {
-                presets: ['es2017']
+                presets: ['es2017'],
+                plugins: ['transform-object-rest-spread']
             }
         }]
     }
