@@ -96,7 +96,21 @@ export default class UserService extends Service {
     set userName(val) { this._userName = val; } 
 }
 ```
-2. Агрегируем _UserService_ в _AppProvider'e_.
+2. Определяем значение полей по умолчанию через статическую переменную _defaultValues_, и сохраняем ссылку на класс используя метод _getClass()_. Ключи _defaultValues_ должны совпадать с названиями геттеров и сеттеров.
+```javascript
+export default class UserService extends Service {
+    static defaultValues = {
+        userName: 'admin'
+    };
+    constructor(sn) {
+        super(sn);
+        this.getClass(UserService);
+        //other variables
+    }
+    //getters and setters
+}
+```
+3. Агрегируем _UserService_ в _AppProvider'e_.
 ```javascript
 class AppProvider extends Provider {
     defineServices() {
@@ -104,7 +118,11 @@ class AppProvider extends Provider {
     }
 }
 ```
-3. Дальнейшее использование _Service_ тесно связано с использованием класса _ComponentService_
+4. Дальнейшее использование _Service_ тесно связано с использованием класса _ComponentService_
+#### Методы класса __Service__:
+* __getClass(classType: class)__ - метод принимает в качестве аргумента класс и записывает его в поле __this.classType__. В каждом наследнике класса Service необходимо вызывать этот метод в конструкторе, передавая в него ссылку на себя. Данная процедура необходима для доступа к статической переменной, описанного в классе _Service_.
+* __toDefault(prop: string)__ - метод переводит указанное поле (по имени сеттера) к значению данного поля в статической переменной _defaultValues_.
+* __defaultAll()__ - переводит все сеттеры к их значениям в _defaultValues_. 
 #### Принцип работы класса __Service__
 Класс _Service_ содержит только одно приватное поле __serviceName__. Поле заполняется при создании экземпляра класса. Поле необходимо для заполнения __this.state__ React-компонента. Далее поле доступно только через геттер.
 __Автор настоятельно рекомендует передавать в конструктор Service'ов такое же строковое значение как и название класса этого сервиса!__

@@ -28,7 +28,7 @@ module.exports = merge(common, {
             loader: 'babel-loader',
             query: {
                 presets: ['es2017'],
-                plugins: ['transform-object-rest-spread']
+                plugins: ['transform-object-rest-spread', "transform-class-properties"]
             }
         }]
     }
