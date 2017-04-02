@@ -2,7 +2,7 @@
   "name": "react-singleton-state",
   "version": "1.0.0",
   "description": "The libruary helps you providing easy data sharing between components by using a principle of angular singleton services",
-  "main": "index.js",
+  "main": "lib/lib.js",
   "scripts": {
     "test": "test",
     "start": "webpack",
@@ -27,6 +27,9 @@
     "url": "https://github.com/Olegdzhan/react-singleton-state/issues"
   },
   "homepage": "https://github.com/Olegdzhan/react-singleton-state#readme",
+  "dependencies": {
+    "react": "^15.4.2"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.24.0",
@@ -36,5 +39,12 @@
     "babel-preset-es2017": "^6.22.0",
     "webpack": "^2.3.2",
     "webpack-merge": "^4.1.0"
-  }
+  },
+  "peerDependencies": {
+    "react": ">=0.15.0"
+  },
+  "files": [
+    "README.md",
+    "lib"
+  ]
 }
