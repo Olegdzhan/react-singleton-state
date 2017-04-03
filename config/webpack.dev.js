@@ -4,7 +4,8 @@ var common = require('./webpack.common');
 module.exports = merge(common, {
 
     output: {
-        library: 'Singleton'
+        library: 'Singleton',
+        libraryTarget: 'umd'
     },
 
     devServer: {

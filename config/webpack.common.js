@@ -7,7 +7,7 @@ module.exports = {
 
     entry: {
         lib: './lib/lib.js',
-        sample: './sample/src/main.js'
+        sample: './sample/main.js'
     },
 
     output: {
@@ -17,7 +17,7 @@ module.exports = {
     },
 
     resolve: {
-        modules: ['node_modules'],
+        modules: ['node_modules', 'lib', 'sample/src'],
         extensions: ['.js']
     },
 
@@ -55,18 +55,17 @@ module.exports = {
             },
             {
                 test: /\.styl$/,
-                use: ['to-string-loader', 'css-loader', 'stylus-loader']
+                loader: 'style-loader!css-loader!stylus-loader'
             }
         ]
     },
     
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'sample/src/index.html',
+            template: 'sample/index.html',
             filename: 'index.html',
             title: 'React Singleton State Sample App'
-        }),
-        new ExtractTextPlugin('public/[name].css')
+        })
     ]
 
 };

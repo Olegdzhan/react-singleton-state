@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/Olegdzhan/react-singleton-state#readme",
   "dependencies": {
+    "material-ui": "^0.17.1",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.8",
     "react-dom": "^15.4.2",
@@ -50,6 +51,7 @@
     "html-webpack-plugin": "^2.16.1",
     "null-loader": "^0.1.1",
     "raw-loader": "^0.5.1",
+    "react-tap-event-plugin": "^2.0.1",
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
     "stylus-loader": "^3.0.1",
