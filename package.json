@@ -5,7 +5,7 @@
   "main": "lib/lib.js",
   "scripts": {
     "test": "test",
-    "start": "webpack",
+    "start": "webpack-dev-server --inline --progress --port 5656",
     "build": "rimraf bundle && webpack --config config/webpack.prod.js --progress --profile --bail"
   },
   "repository": {
@@ -28,7 +28,11 @@
   },
   "homepage": "https://github.com/Olegdzhan/react-singleton-state#readme",
   "dependencies": {
-    "react": "^15.4.2"
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.8",
+    "react-dom": "^15.4.2",
+    "react-singleton-state": "^1.0.0",
+    "stylus": "^0.54.5"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -37,7 +41,21 @@
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2017": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "css-loader": "^0.26.4",
+    "extract-text-webpack-plugin": "2.0.0-beta.5",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.16.1",
+    "null-loader": "^0.1.1",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.2",
+    "style-loader": "^0.13.1",
+    "stylus-loader": "^3.0.1",
+    "to-string-loader": "^1.1.5",
     "webpack": "^2.3.2",
+    "webpack-dev-server": "2.4.1",
     "webpack-merge": "^4.1.0"
   },
   "peerDependencies": {

@@ -3,34 +3,21 @@ var common = require('./webpack.common');
 
 module.exports = merge(common, {
 
+    output: {
+        library: 'Singleton'
+    },
+
+    devServer: {
+        publicPath: "/",
+        contentBase: "./public"
+    },
+
     devtool: 'cheap-module-eval-source-map',
 
     watch: true,
 
     watchOptions: {
         aggregateTimeout: 100
-    },
-
-    resolve: {
-        modules: ['node_modules'],
-        extensions: ['.js']
-    },
-
-    resolveLoader: {
-        modules: ['node_modules'],
-        moduleExtensions: ['-loader'],
-        extensions: ['.js']
-    },
-
-    module: {
-        rules: [{
-            test: /\.js$/,
-            loader: 'babel-loader',
-            query: {
-                presets: ['es2017'],
-                plugins: ['transform-object-rest-spread', "transform-class-properties"]
-            }
-        }]
     }
 
 });

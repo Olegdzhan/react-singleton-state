@@ -10,11 +10,11 @@ module.exports = merge(common, {
 
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),
-        new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
+        /*new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
             mangle: {
                 keep_fnames: true
             }
-        }),
+        }),*/
         new webpack.DefinePlugin({
             'process.env': {
                 'ENV': JSON.stringify(ENV)
