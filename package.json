@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "start": "webpack-dev-server --inline --progress --port 5656",
-    "build": "rimraf bundle && webpack --config config/webpack.prod.js --progress --profile --bail"
+    "build": "rimraf public && webpack --config config/webpack.prod.js --progress --profile --bail"
   },
   "repository": {
     "type": "git",
@@ -28,12 +28,7 @@
   },
   "homepage": "https://github.com/Olegdzhan/react-singleton-state#readme",
   "dependencies": {
-    "material-ui": "^0.17.1",
-    "react": "^15.4.2",
-    "react-bootstrap": "^0.30.8",
-    "react-dom": "^15.4.2",
-    "react-singleton-state": "^1.0.0",
-    "stylus": "^0.54.5"
+    "react": "^15.4.2"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -49,11 +44,14 @@
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.16.1",
+    "material-ui": "^0.17.1",
     "null-loader": "^0.1.1",
     "raw-loader": "^0.5.1",
+    "react-dom": "^15.4.2",
     "react-tap-event-plugin": "^2.0.1",
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "to-string-loader": "^1.1.5",
     "webpack": "^2.3.2",

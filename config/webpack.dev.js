@@ -1,5 +1,6 @@
 var merge = require('webpack-merge');
 var common = require('./webpack.common');
+var helpers = require('./helpers');
 
 module.exports = merge(common, {
 
@@ -9,7 +10,9 @@ module.exports = merge(common, {
     },
 
     devServer: {
-        publicPath: "/",
+        path: helpers.root('/public'),
+        publicPath: '/',
+        filename: '[name].js',
         contentBase: "./public"
     },
 
