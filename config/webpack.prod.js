@@ -1,12 +1,21 @@
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var common = require('./webpack.common');
+var helpers = require('./helpers');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
 module.exports = merge(common, {
 
     devtool: 'source-map',
+
+    output: {
+        path: helpers.root('/public'),
+        publicPath: '',
+        filename: '[name].js',
+        library: 'reactSingletonState',
+        libraryTarget: 'umd'
+    },
 
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),

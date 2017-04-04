@@ -6,6 +6,26 @@
 Библиотека помогает быстро внедрять данные в React-компоненты путем записи и чтения __объектов-синглтонов__.
 Библиотека для тех, кто хочет быстро "пересесть" с Angular 1.x на React
 
+## Launch v1.0.0:
+Так как при установке в node_modules приходит исходный каталог, необходимо добавить в _webpack.config_ Вашего проекта следующую настройку js-модуля:
+```javascript
+{
+    test: /\.js$/,
+    loader: 'babel-loader',
+    query: {
+        presets: ['es2017', 'react'],
+        plugins: ['transform-object-rest-spread', 'transform-class-properties']
+    }
+}
+```
+дополнительно установите:
+__npm install --save-dev babel-preset-es2017 babel-plugin-transform-class-properties babel-plugin-transform-object-rest-spread__
+Проблема решена с версии __1.0.1__.
+
+## Launch Sample App (since v1.0.2)
+start index.html in browser
+_node_modules/react-singleton-state/public/index.html_
+
 ## Использование:
 Библиотека состоит из следующих исполняемых классов и функций:
 1. Класс __Provider__ - синглтон, основное хранилище приложения.

@@ -11,9 +11,7 @@ module.exports = {
     },
 
     output: {
-        path: helpers.root('/public'),
-        publicPath: '/',
-        filename: '[name].js',
+
     },
 
     resolve: {

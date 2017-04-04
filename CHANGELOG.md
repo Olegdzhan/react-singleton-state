@@ -1,4 +1,8 @@
-# v1.0.1 [2017-04-04]
+# v1.0.2 [2017-04-04]
+1. Fix bundle output
+2. Replace some packages from _dependencies_ to _devDependencies_
+
+# v1.0.1 [2017-04-04] __Output Error__
 1. Add CHANGELOG.md
 2. Add __sample app__
 3. New webpack configurations
