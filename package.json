@@ -1,8 +1,8 @@
 {
   "name": "react-singleton-state",
-  "version": "1.0.0",
-  "description": "The libruary helps you providing easy data sharing between components by using a principle of angular singleton services",
-  "main": "lib/lib.js",
+  "version": "1.0.1",
+  "description": "The library helps you providing easy data sharing between components by using a principle of angular singleton services",
+  "main": "public/lib.js",
   "scripts": {
     "test": "test",
     "start": "webpack-dev-server --inline --progress --port 5656",
@@ -65,6 +65,8 @@
   },
   "files": [
     "README.md",
-    "lib"
+    "CHANGELOG.md",
+    "sample",
+    "public"
   ]
 }

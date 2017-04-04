@@ -23,7 +23,7 @@ export default class App extends Component {
     }
 
     onChangeRoute(route) {
-        this.reRender(RouteService)('route').set(route);
+        this.reRender(RouteService)('route').setDefault();
     }
 
     render() {

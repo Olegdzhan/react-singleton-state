@@ -1,8 +1,10 @@
-## v1.0.1 [Unreleased]
+# v1.0.1 [2017-04-04]
 1. Add CHANGELOG.md
 2. Add __sample app__
 3. New webpack configurations
 4. Additional files and directories in package.json _files_
+5. Output npm file is bundeled now and has now need to use object-rest-spread and transform-class-properties pl
+6. _Service.getClass()_ is deprecated and will be removed sinse v1.1.0
 
 # v1.0.0 [2017-04-02]
 1. Add class __Provider__ with methods:

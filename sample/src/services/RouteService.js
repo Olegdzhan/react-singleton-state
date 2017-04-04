@@ -8,7 +8,6 @@ export default class RouteService extends Service {
 
     constructor(sn) {
         super(sn);
-        this.getClass(RouteService);
         this._route = RouteService.defaultValues.route;
     }
 
