@@ -25,6 +25,8 @@ __npm install --save-dev babel-preset-es2017 babel-plugin-transform-class-proper
 ## Launch Sample App (since v1.0.2)
 start index.html in browser
 _node_modules/react-singleton-state/public/index.html_
+You also need __material-ui__ package to run the sample app.
+#### There you can _compare react-singleton-state and redux_ and choose which one is easier and more flexible for you.
 
 ## Использование:
 Библиотека состоит из следующих исполняемых классов и функций:
@@ -105,20 +107,23 @@ __Provider__ является самовызывающейся функцией,
 ### Service
 __Service__ - это бин. В сервисе есть только его поля, а также геттеры и сеттеры для обращения к ним.
 #### Использование __Service__ в приложении
-1. Наследуем новый бин от __Service__, определяем его поля, геттеры и сеттеры.
+1. Наследуем новый бин от __Service__, ~~определяем его поля~~, геттеры и сеттеры. (Начиная с версии 1.0.3, приватные поля определяются автоматически из _defaultValues_. Доступ к ним осуществляется через _Symbol.for()_).
 ```javascript
 export default class UserService extends Service {
-    constructor(sn) {
-        super(sn);
-        this._userName = 'defaultName';
-    }
-    get userName() { return this._userName; }
-    set userName(val) { this._userName = val; } 
+    static defaultValues = {
+        userName: 'DefaultName'
+    };
+    
+    get userName() { return this[Symbol.for('userName')]; }
+    set userName(val) { this[Symbol.for('userName')] = val; } 
 }
 ```
-2. Определяем значение полей по умолчанию через статическую переменную _defaultValues_, и сохраняем ссылку на класс используя метод _getClass()_. Ключи _defaultValues_ должны совпадать с названиями геттеров и сеттеров.
+~~2. Определяем значение полей по умолчанию через статическую переменную _defaultValues_, и сохраняем ссылку на класс используя метод _getClass()_. Ключи _defaultValues_ должны совпадать с названиями геттеров и сеттеров.~~
 __Метод getClass() перестал поддерживаться с версии 1.0.1 и будет полностью отменен с версии 1.1.0__
 ```javascript
+/*
+ *  Шаг не имеет смысла после обновлений 1.0.2 и 1.0.3
+ */
 export default class UserService extends Service {
     static defaultValues = {
         userName: 'admin'

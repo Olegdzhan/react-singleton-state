@@ -6,12 +6,7 @@ export default class RouteService extends Service {
         route: 'comparing'
     };
 
-    constructor(sn) {
-        super(sn);
-        this._route = RouteService.defaultValues.route;
-    }
-
-    get route() { return this._route; }
-    set route(val) { this._route = val; }
+    get route() { return this[Symbol.for('route')]; }
+    set route(val) { this[Symbol.for('route')] = val; }
 
 }

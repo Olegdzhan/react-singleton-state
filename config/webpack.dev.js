@@ -5,16 +5,11 @@ var helpers = require('./helpers');
 module.exports = merge(common, {
 
     output: {
-        library: 'Singleton',
-        libraryTarget: 'umd'
+        path: helpers.root('/public'),
+        publicPath: '',
+        filename: '[name].js'
     },
 
-    devServer: {
-        path: helpers.root('/public'),
-        publicPath: '/',
-        filename: '[name].js',
-        contentBase: "./public"
-    },
 
     devtool: 'cheap-module-eval-source-map',
 
