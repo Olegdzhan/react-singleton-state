@@ -1,6 +1,6 @@
 {
   "name": "react-singleton-state",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The library helps you providing easy data sharing between components by using a principle of angular singleton services",
   "main": "public/lib.js",
   "scripts": {

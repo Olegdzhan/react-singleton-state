@@ -1,4 +1,4 @@
-# react-singleton-state 1.0.3
+# react-singleton-state 1.0.4
 
 ## Author: Oleg Mukhov
 

@@ -1,3 +1,6 @@
+# v1.0.4 [2017-04-09]
+1. Fix versions in Readme and Changelog
+
 # v1.0.3 [2017-04-09]
 1. Fix webpack.dev
 2. Fix returning _URLS_ const - now its name is uppercase
