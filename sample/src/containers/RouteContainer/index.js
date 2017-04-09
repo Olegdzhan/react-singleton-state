@@ -1,15 +1,20 @@
 import React from 'react';
+import ComparingContainer from 'containers/ComparingContainer';
+
 import './routeContainer.styl';
 
-const styles = {
-
-};
-
 export default ({
-    title,
+    route,
     children
 }) => (
     <div className="routeContainer">
-        <h1 className="title">{title}</h1>
+        {(() => {
+            switch(route) {
+                case 'comparing':
+                    return <ComparingContainer/>;
+                default:
+                    return <h1 className="title">{route}</h1>;
+            }
+        })()}
     </div>
 );

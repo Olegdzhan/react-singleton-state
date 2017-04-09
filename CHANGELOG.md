@@ -1,3 +1,9 @@
+# v1.0.3 [2017-04-09]
+1. Fix webpack.dev
+2. Fix returning _URLS_ const - now its name is uppercase
+3. Services private fields now is acceptable from _Symbol.for(<defaultValue>)_ and created automatically from static _defaultValues_
+4. Library sample-app has a view with comparison of _react-singleton-state_ and _redux_ with code examples
+
 # v1.0.2 [2017-04-04]
 1. Fix bundle output
 2. Replace some packages from _dependencies_ to _devDependencies_

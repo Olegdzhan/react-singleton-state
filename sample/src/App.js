@@ -9,6 +9,8 @@ import AppBarTitle      from 'components/Navigation/AppBarTitle';
 import AppBarNav        from 'components/Navigation/AppBarNav';
 import RouteContainer   from 'containers/RouteContainer';
 
+import './app.styl';
+
 import AppProvider from 'services/AppProvider';
 const { RouteService } = AppProvider;
 
@@ -23,7 +25,7 @@ export default class App extends Component {
     }
 
     onChangeRoute(route) {
-        this.reRender(RouteService)('route').setDefault();
+        this.reRender(RouteService)('route').set(route);
     }
 
     render() {
@@ -35,7 +37,7 @@ export default class App extends Component {
                         iconElementLeft={<AppBarNav onItemTap={this.onChangeRoute} />}
                         iconElementRight={<FlatButton label="Docs" color="white" />}
                     />
-                    <RouteContainer title={RouteService.route}/>
+                    <RouteContainer route={RouteService.route}/>
                 </div>
             </MuiThemeProvider>
         );
